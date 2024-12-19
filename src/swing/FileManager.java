@@ -47,7 +47,7 @@ public class FileManager {
             File file = new File(fileName);
             fileName = file.getName();
             archive = file.getParent() + "/" + archive; // Путь к директории
-            result = ArchiveManager.dearchive(archive, fileName);
+            //result = ArchiveManager.dearchive(archive, fileName);
             System.out.println("result " + result + "\n");
         }
         if (encryptKey != 0)
@@ -78,7 +78,7 @@ public class FileManager {
             File file = new File(fileName);
             fileName = file.getName();
             archive = file.getParent() + "/" + archive; // Путь к директории
-            ArchiveManager.archive(archive, fileName, data);
+            //ArchiveManager.archive(archive, fileName, data);
         }
     }
     
