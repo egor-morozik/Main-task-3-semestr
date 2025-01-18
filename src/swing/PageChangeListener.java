@@ -8,10 +8,6 @@ package main.app;
  *
  * @author egorm
  */
-public enum SerializerType {
-    txt,
-    json,
-    xml,
-    yaml,
-    html
+interface PageChangeListener {
+    void onPageChange(String pageName);
 }

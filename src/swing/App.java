@@ -8,10 +8,10 @@ package main.app;
  *
  * @author egorm
  */
-public enum SerializerType {
-    txt,
-    json,
-    xml,
-    yaml,
-    html
+import javax.swing.*;
+
+public class App {
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> new AppFrame().setVisible(true));
+    }
 }
