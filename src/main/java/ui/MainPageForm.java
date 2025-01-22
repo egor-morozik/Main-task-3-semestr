@@ -8,6 +8,7 @@ import ui.actions.ActionController;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import settings.FileSettings;
+import settings.SettingsManager;
 
 /**
  *
@@ -19,6 +20,7 @@ public class MainPageForm extends javax.swing.JPanel implements PropertyChangeLi
      * Creates new form MainPageForm
      */
     public MainPageForm() {
+        SettingsManager.getInstance().addObserver(this);
         initComponents();
     }
 
@@ -58,7 +60,7 @@ public class MainPageForm extends javax.swing.JPanel implements PropertyChangeLi
         readButton.setBackground(new java.awt.Color(86, 86, 87));
         readButton.setForeground(new java.awt.Color(221, 221, 220));
         readButton.setText("R e a d");
-        readButton.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        readButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         readButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 readButtonActionPerformed(evt);
@@ -68,6 +70,7 @@ public class MainPageForm extends javax.swing.JPanel implements PropertyChangeLi
         calculate_Button.setBackground(new java.awt.Color(86, 86, 87));
         calculate_Button.setForeground(new java.awt.Color(221, 221, 220));
         calculate_Button.setText("C a l c u l a t e");
+        calculate_Button.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         calculate_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 calculate_ButtonActionPerformed(evt);
@@ -77,6 +80,7 @@ public class MainPageForm extends javax.swing.JPanel implements PropertyChangeLi
         writeButton.setBackground(new java.awt.Color(86, 86, 87));
         writeButton.setForeground(new java.awt.Color(221, 221, 220));
         writeButton.setText("W r i t e");
+        writeButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         writeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 writeButtonActionPerformed(evt);
@@ -85,54 +89,47 @@ public class MainPageForm extends javax.swing.JPanel implements PropertyChangeLi
 
         inputLabel.setBackground(new java.awt.Color(30, 30, 31));
         inputLabel.setForeground(new java.awt.Color(221, 221, 220));
+        inputLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         inputLabel.setText("I N P U T ");
 
         outputLabel.setBackground(new java.awt.Color(30, 30, 31));
         outputLabel.setForeground(new java.awt.Color(221, 221, 220));
+        outputLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         outputLabel.setText("O U T P U T");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(16, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(readButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(134, 134, 134)
-                                .addComponent(calculate_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
-                                .addComponent(writeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(inputScrollPane)
-                            .addComponent(outputScrollPane))
-                        .addGap(16, 16, 16))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(outputLabel)
-                        .addGap(368, 368, 368))))
             .addGroup(layout.createSequentialGroup()
-                .addGap(368, 368, 368)
-                .addComponent(inputLabel)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(inputLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addComponent(outputLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(outputScrollPane)
+            .addComponent(inputScrollPane)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(readButton, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
+                .addGap(142, 142, 142)
+                .addComponent(calculate_Button, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                .addGap(143, 143, 143)
+                .addComponent(writeButton, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(inputLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(inputLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(outputScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addComponent(inputScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
                     .addComponent(calculate_Button, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
                     .addComponent(writeButton, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
                     .addComponent(readButton, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
-                .addGap(26, 26, 26)
-                .addComponent(inputScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23)
+                .addComponent(outputScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(outputLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(outputLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents

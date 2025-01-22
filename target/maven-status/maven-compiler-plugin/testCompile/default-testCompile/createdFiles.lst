@@ -1,0 +1,9 @@
+serializer\SerializerHtmlTest.class
+serializer\SerializerJsonTest.class
+serializer\SerializerTxtTest.class
+utils\CalculatorTest.class
+io\BasicDataReaderTest.class
+serializer\SerializerXmlTest.class
+archiver\ZipArchiverTest.class
+encryption\BasicEncryptorTest.class
+serializer\SerializerYamlTest.class

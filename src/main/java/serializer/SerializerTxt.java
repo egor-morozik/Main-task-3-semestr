@@ -29,23 +29,40 @@ public class SerializerTxt extends Serializer {
     @Override
     public Vector<String> deserialize(String data)
     {
-        Vector <String> expressions = new Vector <String>();
-	Map<String, Integer> values = new HashMap<String, Integer>();
-        String[] lines = data.split("\\n");
-        for (int i = 0; i < lines.length; i++)
-        {
-            System.out.println("i line" + lines[i] + "\n");
-            if (lines[i].indexOf("=") != -1) 
-            {
-                values.put(lines[i].substring(0, lines[i].indexOf("=")), 
-                                        Integer. parseInt(
-                                        lines[i].substring(lines[i].indexOf("=")+1)));
+        Vector<String> expressions = new Vector<>();
+        Map<String, Integer> values = new HashMap<>();
+
+        // Разбиваем данные по строкам
+        String[] lines = data.split("\n");
+        for (String line : lines) {
+            // Убираем лишние пробелы и символы новой строки
+            line = line.trim();
+
+            // Пропускаем пустые строки
+            if (line.isEmpty()) {
+                continue;
             }
-            else
-            {
-                expressions.add(lines[i]);
+
+            // Проверяем, содержит ли строка знак "="
+            if (line.contains("=")) {
+                try {
+                    // Разбиваем строку на ключ и значение
+                    String key = line.substring(0, line.indexOf("=")).trim();
+                    String valueStr = line.substring(line.indexOf("=") + 1).trim();
+
+                    // Преобразуем значение в число и сохраняем в Map
+                    int value = Integer.parseInt(valueStr);
+                    values.put(key, value);
+                } catch (NumberFormatException e) {
+                    System.err.println("Ошибка: Невозможно преобразовать значение в число: " + line);
+                }
+            } else {
+                // Добавляем строку в список выражений
+                expressions.add(line);
             }
         }
+
+        // Вызываем метод для замены переменных в выражениях
         return substitution(expressions, values);
     }
 }

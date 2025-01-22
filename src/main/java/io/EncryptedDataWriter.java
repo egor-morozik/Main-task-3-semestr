@@ -4,6 +4,7 @@
  */
 package io;
 
+import encryption.BasicEncryptor;
 import java.io.IOException;
 import encryption.Encryptor;
 
@@ -16,9 +17,9 @@ public class EncryptedDataWriter implements DataWriter {
     private final Encryptor encryptor;
     private final String encryptionKey;
 
-    public EncryptedDataWriter(DataWriter wrappedWriter, Encryptor encryptor, String encryptionKey) {
+    public EncryptedDataWriter(DataWriter wrappedWriter, String encryptionKey) {
         this.wrappedWriter = wrappedWriter;
-        this.encryptor = encryptor;
+        this.encryptor = new BasicEncryptor();
         this.encryptionKey = encryptionKey;
     }
 

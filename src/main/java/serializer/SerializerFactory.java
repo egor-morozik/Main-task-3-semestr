@@ -12,21 +12,11 @@ public class SerializerFactory {
     public static Serializer creatSerializer(String type) {
         Serializer serializer = null;
         switch (type) {
-            case "txt":
-                serializer = new SerializerTxt();
-                break;
-            case "json":
-                serializer = new SerializerJson();
-                break;
-            case "xml":
-                serializer = new SerializerXml();
-                break;
-            case "yaml":
-                serializer = new SerializerYaml();
-                break;
-            case "html":
-                serializer = new SerializerHtml();
-                break;
+            case "txt" -> serializer = new SerializerTxt();
+            case "json" -> serializer = new SerializerJson();
+            case "xml" -> serializer = new SerializerXml();
+            case "yaml" -> serializer = new SerializerYaml();
+            case "html" -> serializer = new SerializerHtml();
         }
         return serializer;
     }

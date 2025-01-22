@@ -66,7 +66,7 @@ public class FileSettings {
         }
         
         public Builder setInputFileType(String inputFileType) {
-            this.inputFileType = inputFileKey;
+            this.inputFileType = inputFileType;
             return this;
         }
 

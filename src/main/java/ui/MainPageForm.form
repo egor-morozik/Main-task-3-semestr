@@ -21,33 +21,19 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="16" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="readButton" min="-2" pref="170" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
-                              <Component id="calculate_Button" min="-2" pref="170" max="-2" attributes="0"/>
-                              <EmptySpace pref="136" max="32767" attributes="0"/>
-                              <Component id="writeButton" min="-2" pref="170" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="inputScrollPane" alignment="1" max="32767" attributes="0"/>
-                          <Component id="outputScrollPane" alignment="1" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="outputLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="368" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
+          <Group type="102" attributes="0">
+              <Component id="inputLabel" max="32767" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="368" max="-2" attributes="0"/>
-              <Component id="inputLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          <Component id="outputLabel" max="32767" attributes="0"/>
+          <Component id="outputScrollPane" alignment="0" max="32767" attributes="0"/>
+          <Component id="inputScrollPane" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <Component id="readButton" pref="171" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
+              <Component id="calculate_Button" pref="165" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
+              <Component id="writeButton" pref="171" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -55,19 +41,19 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="inputLabel" min="-2" pref="24" max="-2" attributes="0"/>
+              <Component id="inputLabel" pref="24" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="outputScrollPane" min="-2" pref="210" max="-2" attributes="0"/>
-              <EmptySpace pref="31" max="32767" attributes="0"/>
+              <Component id="inputScrollPane" pref="210" max="32767" attributes="0"/>
+              <EmptySpace pref="23" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" max="-2" attributes="0">
                   <Component id="calculate_Button" alignment="3" pref="40" max="32767" attributes="0"/>
                   <Component id="writeButton" alignment="3" pref="40" max="32767" attributes="0"/>
                   <Component id="readButton" alignment="3" pref="40" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-              <Component id="inputScrollPane" min="-2" pref="210" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <Component id="outputScrollPane" pref="210" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="outputLabel" min="-2" pref="24" max="-2" attributes="0"/>
+              <Component id="outputLabel" pref="24" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -126,8 +112,8 @@
         </Property>
         <Property name="text" type="java.lang.String" value="R e a d"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
-            <EtchetBorder/>
+          <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+            <BevelBorder/>
           </Border>
         </Property>
       </Properties>
@@ -144,6 +130,11 @@
           <Color blue="dc" green="dd" red="dd" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="C a l c u l a t e"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+            <BevelBorder/>
+          </Border>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="calculate_ButtonActionPerformed"/>
@@ -158,6 +149,11 @@
           <Color blue="dc" green="dd" red="dd" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="W r i t e"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+            <BevelBorder/>
+          </Border>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="writeButtonActionPerformed"/>
@@ -171,6 +167,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="dc" green="dd" red="dd" type="rgb"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="I N P U T "/>
       </Properties>
     </Component>
@@ -182,6 +179,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="dc" green="dd" red="dd" type="rgb"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="O U T P U T"/>
       </Properties>
     </Component>

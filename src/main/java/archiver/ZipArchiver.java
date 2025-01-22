@@ -11,6 +11,7 @@ import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.FileSystem;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Map;
@@ -49,10 +50,11 @@ public class ZipArchiver implements Archiver {
 
         try (FileSystem zipFs = FileSystems.newFileSystem(URI.create("jar:" + archivePath.toUri()), Map.of("create", "false"))) {
             Path fileInZip = zipFs.getPath(fileName);
-            if (!Files.exists(fileInZip)) {
+            try {
+                return Files.readString(fileInZip);
+            } catch (NoSuchFileException e) {
                 throw new FileNotFoundException("Файл не найден в архиве: " + fileName);
             }
-            return Files.readString(fileInZip);
         }
     }
 }

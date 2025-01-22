@@ -6,6 +6,7 @@ package io;
 
 import java.io.IOException;
 import archiver.Archiver;
+import archiver.ZipArchiver;
 
 /**
  *
@@ -15,9 +16,9 @@ public class ArchiveDataWriter implements DataWriter {
     private final DataWriter wrappedWriter;
     private final Archiver archiver;
 
-    public ArchiveDataWriter(DataWriter wrappedWriter, Archiver archiver) {
+    public ArchiveDataWriter(DataWriter wrappedWriter) {
         this.wrappedWriter = wrappedWriter;
-        this.archiver = archiver;
+        this.archiver = new ZipArchiver();
     }
 
     @Override

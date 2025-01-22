@@ -4,6 +4,7 @@
  */
 package io;
 
+import encryption.BasicEncryptor;
 import java.io.IOException;
 import encryption.Encryptor;
 
@@ -16,9 +17,9 @@ public class EncryptedDataReader implements DataReader {
     private final Encryptor encryptor;
     private final String encryptionKey;
 
-    public EncryptedDataReader(DataReader wrappedReader, Encryptor encryptor, String encryptionKey) {
+    public EncryptedDataReader(DataReader wrappedReader, String encryptionKey) {
         this.wrappedReader = wrappedReader;
-        this.encryptor = encryptor;
+        this.encryptor =  new BasicEncryptor();
         this.encryptionKey = encryptionKey;
     }
 

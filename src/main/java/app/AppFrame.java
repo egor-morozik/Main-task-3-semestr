@@ -22,7 +22,9 @@ public class AppFrame extends JFrame {
     public AppFrame() {
         setTitle("FileCalculator");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(950, 590);
+        
+        setSize(950, 650);
+        this.setLocationRelativeTo(null);
 
         setLayout(new BorderLayout());
 
@@ -36,9 +38,9 @@ public class AppFrame extends JFrame {
         add(contentPanel, BorderLayout.CENTER);
 
         // Добавляем страницы в contentPanel
+        addPage("Home");
         addPage("Settings");
         addPage("Main");
-        addPage("Home");
     }
 
     /**

@@ -6,6 +6,7 @@ package io;
 
 import java.io.IOException;
 import archiver.Archiver;
+import archiver.ZipArchiver;
 
 /**
  *
@@ -15,9 +16,9 @@ public class ArchiveDataReader implements DataReader {
     private final DataReader wrappedReader;
     private final Archiver archiver;
 
-    public ArchiveDataReader(DataReader wrappedReader, Archiver archiver) {
+    public ArchiveDataReader(DataReader wrappedReader) {
         this.wrappedReader = wrappedReader;
-        this.archiver = archiver;
+        this.archiver = new ZipArchiver();
     }
 
     @Override

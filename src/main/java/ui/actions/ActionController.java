@@ -21,9 +21,9 @@ public class ActionController {
     
     public ActionController(FileSettings fileSettings, JTextArea inputField, JTextArea outputField) 
     {
-        this.readCommand = new ReadCommand(inputField, fileSettings.getInputDirectoryPath(), fileSettings.getInputFileArchive(), fileSettings.getInputFileName());
+        this.readCommand = new ReadCommand(inputField, fileSettings.getInputDirectoryPath(), fileSettings.getInputFileArchive(), fileSettings.getInputFileName(), fileSettings.getInputFileKey());
         this.analyzeCommand = new AnalyzeCommand(inputField, outputField, fileSettings.getInputFileType(), fileSettings.getOutputFileType(), new SerializerFactory(), new Calculator());
-        this.writeCommand = new WriteCommand(fileSettings.getOutputDirectoryPath(), fileSettings.getOutputFileArchive(), fileSettings.getOutputFileName(), outputField);
+        this.writeCommand = new WriteCommand(fileSettings.getOutputDirectoryPath(), fileSettings.getOutputFileArchive(), fileSettings.getOutputFileName(), outputField, fileSettings.getOutputFileKey());
     }
     
     public void onReadButtonClick() {
